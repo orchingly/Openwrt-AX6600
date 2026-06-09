@@ -205,3 +205,20 @@ CONFIG_PACKAGE_luci-proto-ppp=y
 CONFIG_PACKAGE_luci-proto-l2tp=y
 CONFIG_PACKAGE_luci-proto-ipsec=y          # 可选，有些主题需要
 CONFIG_PACKAGE_luci-app-strongswan-swanctl=y
+
+# ========== SoftEther VPN Client 支持 ==========
+# 内核模块：虚拟网卡支持（必需）
+CONFIG_PACKAGE_kmod-tun=y
+
+# SoftEther VPN 5.x 核心库和客户端
+CONFIG_PACKAGE_softethervpn5-libs=y
+CONFIG_PACKAGE_softethervpn5-client=y
+
+# LuCI 管理界面（可选，但方便配置）
+CONFIG_PACKAGE_luci-app-softether=y
+
+# 确保依赖工具也预装（方便后续配置）
+CONFIG_PACKAGE_unzip=y
+CONFIG_PACKAGE_wget=y
+CONFIG_PACKAGE_curl=y
+
